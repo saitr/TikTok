@@ -279,6 +279,69 @@ async function setStatusOk(obj,page) {
   //await page.waitForSelector('/div/div[2]/button[2]');
   //await page.click('/div/div[2]/button[2]');
   //await page.click('/div/div[2]/button[2]');
+  await page.click('#header-login-button')
+  
+  const login_btn = await page.$x('//*[@id="header-login-button"]')
+  if (login_btn.length > 0){
+  	await login_btn[0].click()
+  }
+  
+  setTimeout( async()=>{
+       
+         
+  	await page.click('.tiktok-18x2367-DivCloseWrapper.e1gjoq3k6')
+  	//const element_cookie = page.$x('/html/body/div[2]/div[2]/div/div[2]/div')
+  	//await element_cookie.click()
+  	/*const cookie_btn = page.$x('/html/body/div[2]/div[2]/div/div[2]/div')
+  	if( cookie_btn.length > 0){
+  		await cookie_btn[0].click()
+  	}*/
+  	await page.click('.tiktok-dpfgiv-AButtonLink.eyt76ed11')
+  	
+  },4000)
+  
+ /* const login_btn = await page.$x('//*[@id="header-login-button"]')
+  if (login_btn.length > 0){
+  	await login_btn[0].click
+  }
+  
+  setTimeout( async()=>{
+    await page.click('.tiktok-18x2367-DivCloseWrapper.e1gjoq3k6')
+    const element_cookie = page.$x('/html/body/div[2]/div[2]/div/div[2]/div/a')
+    await element_cookie[0].click()
+  	
+  },4000)*/
+  
+  
+  
+  
+  //html/body/div[7]/div[3]/div/div/div[2]
+  //tiktok-18x2367-DivCloseWrapper e1gjoq3k6
+  //html/body/div[7]/div[3]/div/div/div[2]    -------------------> Close Button
+  
+  //tiktok-d4rgce-DivRightContainer.eyt76ed3  -------------------> Cookies Button
+  //tiktok-dpfgiv-AButtonLink.eyt76ed11
+  
+  
+/*  const clickButton = () => {
+  page.click('#header-login-button');
+}*/
+
+// Click the button after 10 seconds
+// setTimeout(clickButton, 5000);
+
+// Repeat the process 2 times with a 10-second interval
+/*let count = 0;
+const intervalId = setInterval(() => {
+  if (count < 2) {
+    clickButton();
+    count++;
+  } else {
+    clearInterval(intervalId);
+  }
+}, 10000);
+  
+  
   page.on('console', consoleObj => debugMsg(consoleObj.text()));
   await page.setUserAgent(
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36'
@@ -319,17 +382,8 @@ const identifyVisibleContent = (selectors) => {
 }*/
 
 async function getVideoTags() {
-  const element = await page.waitForXPath('//*[@id="main-content-others_homepage"]/div/div[2]/div[2]/div', { timeout: 600000 });
-  let previousHeight;
-  while (true) {
-    previousHeight = await page.evaluate('document.body.scrollHeight');
-    await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
-    await new Promise(resolve => setTimeout(resolve, 60000));
-    const newHeight = await page.evaluate('document.body.scrollHeight');
-    if (newHeight === previousHeight) {
-      break;
-    }
-  }
+  f
+ 
   
   const videoTags = await page.evaluate(() => {
     console.log("IIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
