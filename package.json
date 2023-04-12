@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "puppeteer-firefox": "^0.5.1"
+  }
+}
